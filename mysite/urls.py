@@ -21,5 +21,6 @@ urlpatterns = [
     path('serversocket/', include('serversocket.urls')),
     path('accounts/', include('accounts.urls')),
     path('notification/',include('notification.urls')),
+    path('friends/',include('friends.urls')),
 ]
 

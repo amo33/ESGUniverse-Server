@@ -87,7 +87,7 @@ def load_profile(request):
     info = User.objects.filter(pid=user_id).values()
     
     if info != None:
-        return HttpResponse(info)
+        return HttpResponse(str(info).replace("<QuerySet [","").replace("]>","").replace("\'", "\""))
     else:
         return HttpResponse("NO_INFO")
 
@@ -95,12 +95,15 @@ def load_profile(request):
 def upload_profile(request):
     try:
         fetched_data = json.loads(request.body)
+        print(fetched_data)
         email = fetched_data['email']
         password = fetched_data['password']
         my_id =User.objects.get(email=email, password=password).pid
 
-        User.objects.filter(pid=my_id).update(**fetched_data)
+        info =User.objects.filter(pid=my_id).update(**fetched_data)
     except IntegrityError:
+        return HttpResponse("0")
+    if info == None:
         return HttpResponse("0")
     return HttpResponse("1")
 
@@ -170,8 +173,8 @@ def list_up_city(request):
     elif max_rank != 0:
         for i in range(count):
             city_list.append("M"+str(min_rank-i).zfill(6)) # M000007 과 같은 형식을 추가 
-
-    return HttpResponse(json.dumps(city_list))
+    city_json = json.dumps(city_list)
+    return HttpResponse(city_json)
 
 @csrf_exempt
 def load_city(request):
@@ -181,6 +184,7 @@ def load_city(request):
         print("request data key error")
         return HttpResponse({["error"]})
     city_info = City.objects.filter(pid=data).values()
+    city_json = json.dumps(city_info)
     return HttpResponse(city_info)
 
 @csrf_exempt
@@ -196,4 +200,5 @@ def update_donation(request):
         City.objects.filter(cid=city_id).update(donation_total=donation)
     except Exception as e:
         return HttpResponse("0")
+    print(City.objects.filter(cid=city_id).values())
     return HttpResponse("1")

@@ -21,3 +21,57 @@ Not Found: /
 HTTP GET / 404 [0.01, 103.203.57.9:49878]
 Not Found: /
 HTTP GET / 404 [0.02, 78.108.177.51:35970]
+Watching for file changes with StatReloader
+HTTP POST /accounts/login?email=test@test.com&password=MjN2Mmt2T3RNNkt4QkJnTG0rYnJaUT09 200 [0.02, 117.16.136.174:34166]
+HTTP POST /accounts/load_profile 200 [0.02, 117.16.136.174:34168]
+Not Found: /accounts/load_map
+HTTP POST /accounts/load_map 404 [0.04, 117.16.136.174:34170]
+Internal Server Error: /accounts/load_city
+Traceback (most recent call last):
+  File "/root/project/venv/lib/python3.8/site-packages/asgiref/sync.py", line 472, in thread_handler
+    raise exc_info[1]
+  File "/root/project/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+  File "/root/project/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 146, in __acall__
+    response = await sync_to_async(
+  File "/root/project/venv/lib/python3.8/site-packages/asgiref/sync.py", line 435, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 455, in wait_for
+    return await fut
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/project/venv/lib/python3.8/site-packages/asgiref/sync.py", line 476, in thread_handler
+    return func(*args, **kwargs)
+  File "/root/project/venv/lib/python3.8/site-packages/django/middleware/common.py", line 53, in process_request
+    if self.should_redirect_with_slash(request):
+  File "/root/project/venv/lib/python3.8/site-packages/django/middleware/common.py", line 70, in should_redirect_with_slash
+    if not is_valid_path(request.path_info, urlconf):
+  File "/root/project/venv/lib/python3.8/site-packages/django/urls/base.py", line 155, in is_valid_path
+    return resolve(path, urlconf)
+  File "/root/project/venv/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/root/project/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 651, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/root/project/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 651, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/root/project/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 421, in resolve
+    kwargs.update(self.default_args)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+HTTP POST /accounts/load_city 500 [0.06, 117.16.136.174:34172]
+WebSocket HANDSHAKING /ws/serversocket/test/ [117.16.136.174:34174]
+WebSocket CONNECT /ws/serversocket/test/ [117.16.136.174:34174]
+HTTP POST /accounts/login?email=test@test.com&password=MjN2Mmt2T3RNNkt4QkJnTG0rYnJaUT09 200 [0.02, 117.16.136.174:34176]
+HTTP POST /accounts/load_profile 200 [0.01, 117.16.136.174:34178]
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 24, 2022 - 16:29:03
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+<QuerySet [<User: test01>]>
+User is found!
+6
+<QuerySet [<User: test01>]>
+User is found!
+6

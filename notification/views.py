@@ -46,10 +46,13 @@ def load_noti_detail(request):
         data = json.loads(request.body)['nid']
     except Exception as e:
         print("Request body invalid structure")
-        #return HttpResponse("0")
+        return HttpResponse("0")
     
     info = Notification.objects.filter(nid=data).values()
-    return HttpResponse(info)
+    if info == None:
+        return HttpResponse("0")
+    info_json = json.dumps(info)
+    return HttpResponse(info_json)
 
 @csrf_exempt
 def read_noti(request):
@@ -75,4 +78,22 @@ def delete_noti(request):
         print("Delete Error")
         return HttpResponse("0")
     print(Notification.objects.all())
+    return HttpResponse("1")
+
+@csrf_exempt
+def request_friend(request):
+    print(request.body)
+    try:
+        fetched_data = json.loads(request.body)
+        print(fetched_data)
+        pid = fetched_data['pid']
+        user = production_models.User.objects.get(pid=pid)
+        fetched_data['pid'] = user
+        print(fetched_data)
+    except Exception as e:
+        print("json request loading error")
+        return HttpResponse("0")
+    note = Notification(**fetched_data)
+    note.save() # 새로 업로드 후 저장 
+    print(Notification.objects.all().values())
     return HttpResponse("1")

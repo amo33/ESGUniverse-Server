@@ -9,6 +9,8 @@ urlpatterns = [
   path('withdraw_membership',views.withdraw_membership, name='withdraw_membership'),
   path('update_player_model',views.update_player_model, name='update_player_model'),
   path('password_reset', views.password_reset, name='password_reset'),
+  path('update_donation',views.update_donation, name='update_donations'),
+  path('load_city',views.load_city, 'load_city')
 ]
 
 #  path('signup/', views.signup, name='signup'),
