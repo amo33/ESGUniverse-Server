@@ -13,7 +13,7 @@ import json
 from django.core import serializers
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
-
+from django.http import JsonResponse
 cnt = 9
 serializer_class = BaseUserSerializer
 
@@ -72,12 +72,12 @@ def login(request):
             return HttpResponse("LOGIN_FAIL_NO_EMAIL")
         
 
-@csrf_exempt
-def logout(request):
-    if request.method == 'POST':
-        auth.logout(request)
-        return redirect('/')
-    return render(request, 'accounts/login.html')
+# @csrf_exempt
+# def logout(request):
+#     if request.method == 'POST':
+#         auth.logout(request)
+#         return redirect('/')
+#     return render(request, 'accounts/login.html')
 
 @csrf_exempt
 def load_profile(request):
@@ -180,12 +180,27 @@ def list_up_city(request):
 def load_city(request):
     try:
         data = json.loads(request.body)['pid']
+        city_info = City.objects.filter(pid=data).values()
+        city_json = json.dumps(city_info)
     except Exception as e:
         print("request data key error")
         return HttpResponse({["error"]})
-    city_info = City.objects.filter(pid=data).values()
-    city_json = json.dumps(city_info)
+    
     return HttpResponse(city_info)
+
+@csrf_exempt
+def upload_city(request):
+    try:
+        data= json.loads(request.body)
+        pid= data['pid']
+        user= User.objects.filter(pid=pid)
+        # data['pid']=user 
+        data.pop('pid', None)
+        info = Map.objects.filter(pid=pid).update(**data)
+    except Exception as e:
+        return HttpResponse("0")
+    
+    return HttpResponse("1")
 
 @csrf_exempt
 def update_donation(request):
@@ -201,4 +216,33 @@ def update_donation(request):
     except Exception as e:
         return HttpResponse("0")
     print(City.objects.filter(cid=city_id).values())
+    return HttpResponse("1")
+
+@csrf_exempt
+def load_map(request):
+    try:
+        data = json.loads(request.body)
+        pid = data['pid']
+        # user = User.obects.get(pid=pid)
+        info = Map.objects.filter(pid=pid).values()
+        # map_json = json.dumps(info)
+        # print(map_json)
+    except Exception as e:
+        return HttpResponse(e)
+    result_map = []
+    result_map = list(info)
+    return HttpResponse(json.dumps(result_map[0]))
+
+
+@csrf_exempt 
+def upload_map(request):
+    try:
+        data = json.loads(request.body)
+        pid = data['pid']
+        data.pop('pid', None)
+        info = Map.objects.filter(pid=pid).update(**data)
+        
+    except Exception as e:
+        return HttpResponse(e)
+    print(Map.objects.filter(pid=pid).values())
     return HttpResponse("1")
