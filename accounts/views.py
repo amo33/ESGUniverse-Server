@@ -161,9 +161,9 @@ def email_temp_password(request):
 def list_up_city(request):
     try:
         data = json.loads(request.body)    
-        count = data['count']
-        min_rank = data['minRanking']
-        max_rank = data['maxRanking']
+        count = int(data['count'])
+        min_rank = int(data['minRanking'])
+        max_rank = int(data['maxRanking'])
         print(min_rank, max_rank)
     except Exception as e:
         print("request data key error")
@@ -183,7 +183,7 @@ def list_up_city(request):
 @csrf_exempt
 def load_city(request):
     try:
-        data = json.loads(request.body)['pid']
+        data = int(json.loads(request.body)['pid'])
         print(data)
 
         info = City.objects.filter(pid_id=data).values()
@@ -198,7 +198,7 @@ def load_city(request):
 def upload_city(request):
     try:
         data= json.loads(request.body)
-        pid= data['pid']
+        pid= int(data['pid'])
         user= User.objects.filter(pid=pid)
         # data['pid']=user 
         data.pop('pid', None)
@@ -214,8 +214,8 @@ def upload_city(request):
 def update_donation(request):
     try:
         data = json.loads(request.body)    
-        city_id = data['cid']
-        donation = data['donation_total']
+        city_id = int(data['cid'])
+        donation = int(data['donation_total'])
     except Exception as e:
         print("request data key error")
         return HttpResponse({"error"})
@@ -230,7 +230,7 @@ def update_donation(request):
 def load_map(request):
     try:
         data = json.loads(request.body)
-        pid = data['pid']
+        pid = int(data['pid'])
         # user = User.obects.get(pid=pid)
         info = Map.objects.filter(pid=pid).values()
         # map_json = json.dumps(info)
