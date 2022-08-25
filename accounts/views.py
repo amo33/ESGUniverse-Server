@@ -1,12 +1,12 @@
 from email import message
 from socket import NI_NAMEREQD
 from django.shortcuts import render, redirect
-from yaml import serialize
+
 from .models import User, City, Map
 from django.contrib import auth 
 from django.http import HttpResponse
 from django.contrib.auth.hashers import make_password, check_password
-from .serializers import  BaseUserSerializer , UserinfoSerializer
+from .serializers import  BaseUserSerializer , UserinfoSerializer , CitySerializer
 from django.db import IntegrityError
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -39,7 +39,7 @@ def signup(request):
             except IntegrityError:
                 if User.objects.filter(email=email).exists():
                     print('Email already used!')
-                elif User.objects.filter(nickname = nickname).exists():
+                elif User.objects.filter(nickname = nickname).exists(): # nickname도 integrity를 주었기 때문에 변경을 해야하는지 고민중
                     print("nickname already used!")
                 
                 return HttpResponse('SIGNUP_FAIL_EMAIL')
@@ -99,7 +99,8 @@ def upload_profile(request):
         email = fetched_data['email']
         password = fetched_data['password']
         my_id =User.objects.get(email=email, password=password).pid
-
+        fetched_data.pop('email', None)
+        fetched_data.pop('password', None)
         info =User.objects.filter(pid=my_id).update(**fetched_data)
     except IntegrityError:
         return HttpResponse("0")
@@ -111,7 +112,7 @@ def upload_profile(request):
 def withdraw_membership(request):
     try:
         user_id = json.loads(request.body)['pid']
-        User.objects.filter(id=user_id).delete()
+        User.objects.filter(pid=user_id).delete()
     except  Exception as e:
         return HttpResponse("0")
     return HttpResponse("1")
@@ -161,32 +162,37 @@ def list_up_city(request):
     try:
         data = json.loads(request.body)    
         count = data['count']
-        min_rank = data['min_ranking']
-        max_rank = data['max_ranking']
+        min_rank = data['minRanking']
+        max_rank = data['maxRanking']
+        print(min_rank, max_rank)
     except Exception as e:
         print("request data key error")
         return HttpResponse({["error"]})
     city_list = []
     if min_rank != 0:
         for i in range(count):
-            city_list.append("M"+str(min_rank+i).zfill(6)) # M000007 과 같은 형식을 추가 
+            #city_list.append("M"+str(min_rank+i).zfill(6)) # M000007 과 같은 형식을 추가 
+            city_list.append(str(min_rank+i))
     elif max_rank != 0:
         for i in range(count):
-            city_list.append("M"+str(min_rank-i).zfill(6)) # M000007 과 같은 형식을 추가 
-    city_json = json.dumps(city_list)
+            #city_list.append("M"+str(min_rank-i).zfill(6)) # M000007 과 같은 형식을 추가 
+            city_list.append(str(max_rank-i))
+    city_json = json.dumps(city_list) # 현재 Map의 키는 "M0006"와 같이 사용하지 않고, "6"으로 표현
     return HttpResponse(city_json)
 
 @csrf_exempt
 def load_city(request):
     try:
         data = json.loads(request.body)['pid']
-        city_info = City.objects.filter(pid=data).values()
-        city_json = json.dumps(city_info)
+        print(data)
+
+        info = City.objects.filter(pid_id=data).values()
+        # print("1",info['fields'])
     except Exception as e:
         print("request data key error")
-        return HttpResponse({["error"]})
-    
-    return HttpResponse(city_info)
+        return HttpResponse({"error"})
+
+    return HttpResponse(info, content_type="application/json")
 
 @csrf_exempt
 def upload_city(request):
@@ -196,7 +202,9 @@ def upload_city(request):
         user= User.objects.filter(pid=pid)
         # data['pid']=user 
         data.pop('pid', None)
-        info = Map.objects.filter(pid=pid).update(**data)
+        print(pid,data, user)
+        City.objects.filter(pid=pid).update(**data)
+        print(City.objects.filter(pid=user))
     except Exception as e:
         return HttpResponse("0")
     
@@ -210,7 +218,7 @@ def update_donation(request):
         donation = data['donation_total']
     except Exception as e:
         print("request data key error")
-        return HttpResponse({["error"]})
+        return HttpResponse({"error"})
     try:
         City.objects.filter(cid=city_id).update(donation_total=donation)
     except Exception as e:
@@ -229,9 +237,8 @@ def load_map(request):
         # print(map_json)
     except Exception as e:
         return HttpResponse(e)
-    result_map = []
-    result_map = list(info)
-    return HttpResponse(json.dumps(result_map[0]))
+
+    return HttpResponse(info, content_type="application/json")
 
 
 @csrf_exempt 
@@ -240,7 +247,7 @@ def upload_map(request):
         data = json.loads(request.body)
         pid = data['pid']
         data.pop('pid', None)
-        info = Map.objects.filter(pid=pid).update(**data)
+        Map.objects.filter(pid=pid).update(**data)
         
     except Exception as e:
         return HttpResponse(e)

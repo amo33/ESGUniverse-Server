@@ -8,9 +8,11 @@ urlpatterns = [
   path('withdraw_membership',views.withdraw_membership, name='withdraw_membership'),
   path('update_player_model',views.update_player_model, name='update_player_model'),
   path('password_reset', views.password_reset, name='password_reset'),
-  path('update_donation',views.update_donation, name='update_donations'),
+  path('update_donation',views.update_donation, name='update_donation'),
   path('load_city',views.load_city, name='load_city'),
+  path('upload_city',views.upload_city, name='upload_city'),
   path('load_map',views.load_map, name='load_map'),
+  path('list_up_city',views.list_up_city, name='list_up_city'),
   path('upload_map',views.upload_map, name='upload_map')
 ]
 

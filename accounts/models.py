@@ -4,7 +4,7 @@ from datetime import datetime
 # Create your models here.
 
 class User(models.Model):
-    pid = models.AutoField(primary_key=True)
+    pid = models.AutoField(primary_key=True, verbose_name='pid')
     name = models.CharField(max_length=64, verbose_name='username') # verbose_name은 관리자에게 보이는 이름명이다.
     password = models.CharField(max_length=64, verbose_name='password')
     email = models.TextField(verbose_name = 'email', unique=True)
@@ -27,12 +27,12 @@ class User(models.Model):
     vehicle_unlock = models.IntegerField(verbose_name='vechileInfo',default=0)
     fuel_info = models.TextField(verbose_name='fuelInfo',blank=True)
     def __str__(self):
-        return str(self.name)
+        return str(self.pid)
     class Meta:
         db_table = 'user_db'
 
 class City(models.Model):
-    cid = models.AutoField(primary_key=True)
+    cid = models.AutoField(primary_key=True, verbose_name='cid')
     pid = models.ForeignKey(User,related_name="city", on_delete=models.CASCADE,verbose_name='person_id')
     population = models.IntegerField(verbose_name='population',default=0)
     happy_index = models.IntegerField(verbose_name='happy_index',default=0)
@@ -59,7 +59,7 @@ class City(models.Model):
         db_table = 'city_db'
 
 class Map(models.Model):
-    mid = models.AutoField(primary_key=True)
+    mid = models.AutoField(primary_key=True, verbose_name='Mid')
     pid = models.ForeignKey(User,related_name="map", on_delete=models.CASCADE,verbose_name='person_id')  
     traffic_hub_unlock = models.IntegerField(verbose_name='traffic_hub_unlock',default=0)
     factory_level = models.IntegerField(verbose_name='factory_level',default = 0)
