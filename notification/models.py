@@ -5,7 +5,7 @@ from accounts import models as production_models
 # Create your models here.
 class Notification(models.Model):
     nid = models.AutoField(primary_key=True)
-    pid = models.ForeignKey(production_models.User,on_delete=models.CASCADE)
+    pid = models.ForeignKey(production_models.User,on_delete=models.CASCADE,verbose_name='person_id')
     noti_type = models.IntegerField(verbose_name='noti_type',default=0)
     title = models.TextField(verbose_name='title',blank=True)
     content = models.TextField(verbose_name='content',blank=True)

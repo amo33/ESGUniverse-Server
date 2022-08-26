@@ -16,11 +16,11 @@ from django.template.loader import render_to_string
 def accept_friend(request):
     try:
         data = json.loads(request.body)
-        pid1 = data['pid1']
-        pid2 = data['pid2']
+        pid1 = int(data['pid1'])
+        pid2 = int(data['pid2'])
         user = production_models.User.objects.get(pid=pid1)
         user2 = production_models.User.objects.get(pid=pid2)
-        data['pid1'] = user
+        data['pid1'] = user 
         data['pid2'] = user2
     except Exception as e:
         print("Request body invalid structure")
@@ -38,14 +38,14 @@ def accept_friend(request):
 def delete_friend(request):
     try:
         data = json.loads(request.body)
-        pid1 = data['pid1']
-        pid2 = data['pid2']
+        pid1 = int(data['pid1'])
+        pid2 = int(data['pid2'])
         user = production_models.User.objects.get(pid=pid1)
         user2 = production_models.User.objects.get(pid=pid2)
         data['pid1'] = user
         data['pid2'] = user2
         Friend.objects.filter(Q(pid1=pid1, pid2= pid2)|Q(pid1=pid2, pid2=pid1)).delete() # 2개 삭제
-        
+        print(Friend.objects.all())
     except Exception as e:
         print("Request body invalid structure")
         #return HttpResponse("0")
@@ -58,9 +58,10 @@ def delete_friend(request):
 def load_friend_list(request):
     try:
         data = json.loads(request.body)
-        pid = data['pid1']
+        pid = int(data['pid1'])
         print("pid",pid)
-        user_lst = Friend.objects.filter(pid1= pid).values_list('pid2',flat=True)
+        user = production_models.User.objects.get(pid=pid)
+        user_lst = Friend.objects.filter(pid1= user).values_list('pid2',flat=True)
         print("user_lst",user_lst)
         nick_name_list = production_models.User.objects.filter(pid__in=user_lst).values_list('nickname')
     except Exception as e:

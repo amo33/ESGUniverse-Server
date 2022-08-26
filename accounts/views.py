@@ -3,6 +3,8 @@ from socket import NI_NAMEREQD
 from django.shortcuts import render, redirect
 
 from .models import User, City, Map
+from friends.models import Friend
+from notification.models import Notification
 from django.contrib import auth 
 from django.http import HttpResponse
 from django.contrib.auth.hashers import make_password, check_password
@@ -34,6 +36,9 @@ def signup(request):
                 user_city.save()
                 user_map = Map(pid=user)
                 user_map.save()
+                # note = Notification(pid=user)
+                # note.save()
+                # friend = 
                 # cnt+=1
                 print(Map.objects.all())
             except IntegrityError:
@@ -62,7 +67,6 @@ def login(request):
         id_num = User.objects.get(email=email, password=password).pid
         print("User is found!")
         return HttpResponse("LOGIN_SUCCESS/PID:{}".format(id_num))
-        # 존재하지 않는다면
     else:
         if User.objects.filter(email=email).exists():
             if user_exists == False:
@@ -72,22 +76,17 @@ def login(request):
             return HttpResponse("LOGIN_FAIL_NO_EMAIL")
         
 
-# @csrf_exempt
-# def logout(request):
-#     if request.method == 'POST':
-#         auth.logout(request)
-#         return redirect('/')
-#     return render(request, 'accounts/login.html')
-
 @csrf_exempt
 def load_profile(request):
     data = json.loads(request.body)
     user_id = int(data['pid'])
     print(user_id)
     info = User.objects.filter(pid=user_id).values()
-    
+    print(info)
     if info != None:
-        return HttpResponse(str(info).replace("<QuerySet [","").replace("]>","").replace("\'", "\""))
+        print(list(info))
+        #return HttpResponse(str(info).replace("<QuerySet [","").replace("]>","").replace("\'", "\""))
+        return JsonResponse(list(info)[0], safe=False)
     else:
         return HttpResponse("NO_INFO")
 
@@ -145,7 +144,7 @@ def email_temp_password(request):
     data = json.loads(request.body)
     try:
         user_id= int(data['pid'])
-        password = 000000
+        password = '000000'
         User.objects.filter(pid=user_id).update(password=password)
 
     except Exception as e:
@@ -187,12 +186,14 @@ def load_city(request):
         print(data)
 
         info = City.objects.filter(pid_id=data).values()
+        # print(info)
+        info = list(info)
+        print(info) # change queryset to list 형태 
         # print("1",info['fields'])
     except Exception as e:
         print("request data key error")
         return HttpResponse({"error"})
-
-    return HttpResponse(info, content_type="application/json")
+    return JsonResponse(info[0], safe=False) # This is a method That I found (08/26)
 
 @csrf_exempt
 def upload_city(request):
@@ -233,12 +234,12 @@ def load_map(request):
         pid = int(data['pid'])
         # user = User.obects.get(pid=pid)
         info = Map.objects.filter(pid=pid).values()
-        # map_json = json.dumps(info)
+        map_json = list(info)
         # print(map_json)
     except Exception as e:
         return HttpResponse(e)
 
-    return HttpResponse(info, content_type="application/json")
+    return JsonResponse(*map_json) # 여러개의 map들이 넘어갈 수 있기 때문에 *map_json으로 표현 
 
 
 @csrf_exempt 

@@ -1,3 +1,4 @@
+from pickle import FALSE
 from django.shortcuts import render, redirect
 from yaml import serialize
 from .models import Notification
@@ -9,26 +10,27 @@ from django.views.decorators.csrf import csrf_exempt
 from accounts import models as production_models
 import json
 from django.template.loader import render_to_string
+from django.http import JsonResponse
 # Create your views here.
 
 @csrf_exempt
 def load_noti_list(request):
     try:
-        data = json.loads(request.body)['pid']
+        data = int(json.loads(request.body)['pid'])
     except Exception as e:
         print("Request body invalid structure")
         #return HttpResponse("0")
     
-    info = Notification.objects.filter(pid=data).values('nid','noti_type','title','update_time','is_read')
-    return HttpResponse(info)
+    info = list(Notification.objects.filter(pid=data).values('nid','noti_type','title','update_time','is_read'))
+    print(info)
+    return JsonResponse(*info)
 
 @csrf_exempt
 def upload_noti_detail(request):
-    print(request.body)
     try:
         fetched_data = json.loads(request.body)
         print(fetched_data)
-        pid = fetched_data['pid']
+        pid = int(fetched_data['pid'])
         user = production_models.User.objects.get(pid=pid)
         fetched_data['pid'] = user
         print(fetched_data)
@@ -43,21 +45,21 @@ def upload_noti_detail(request):
 @csrf_exempt
 def load_noti_detail(request):
     try:
-        data = json.loads(request.body)['nid']
+        data = int(json.loads(request.body)['nid'])
     except Exception as e:
         print("Request body invalid structure")
         return HttpResponse("0")
     
-    info = Notification.objects.filter(nid=data).values()
+    info = list(Notification.objects.filter(nid=data).values())
+    print(info)
     if info == None:
         return HttpResponse("0")
-    info_json = json.dumps(info)
-    return HttpResponse(info_json)
+    return JsonResponse(*info)
 
 @csrf_exempt
 def read_noti(request):
     try:
-        data = json.loads(request.body)['nid']
+        data = int(json.loads(request.body)['nid'])
     except Exception as e:
         print("No request input of nid")
         return HttpResponse("0")
@@ -67,7 +69,7 @@ def read_noti(request):
 @csrf_exempt
 def delete_noti(request):
     try:
-        data = json.loads(request.body)['nid']
+        data = int(json.loads(request.body)['nid'])
     except Exception as e:
         print("Request body invalid structure")
         return HttpResponse("0")
@@ -86,7 +88,7 @@ def request_friend(request):
     try:
         fetched_data = json.loads(request.body)
         print(fetched_data)
-        pid = fetched_data['pid']
+        pid = int(fetched_data['pid'])
         user = production_models.User.objects.get(pid=pid)
         fetched_data['pid'] = user
         print(fetched_data)
